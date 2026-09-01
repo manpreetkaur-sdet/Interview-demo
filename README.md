@@ -497,6 +497,57 @@ An `.env.example` file is provided as a template for the required environment va
 
 ---
 
+Code Quality
+
+The project uses ESLint and Prettier to maintain code quality, consistency, and readable formatting across the automation framework.
+
+ESLint
+
+ESLint is used to identify potential JavaScript/TypeScript code-quality issues, such as unused variables and other common problems.
+
+Run ESLint
+
+npx eslint .
+
+Automatically fix ESLint issues
+
+npx eslint . --fix
+
+The ESLint configuration is maintained in eslint.config.mjs.
+
+Prettier
+
+Prettier is used to keep the project code consistently formatted.
+
+Check formatting
+
+npx prettier . --check
+
+This checks the project for formatting issues without changing any files.
+
+Format the project
+
+npx prettier . --write
+
+This automatically formats the project files.
+
+The Prettier configuration is maintained in .prettierrc.
+
+Recommended Code Quality Check
+
+Before committing or submitting the project, run:
+
+npx prettier . --check
+npx eslint .
+
+If formatting changes are required, run:
+
+npx prettier . --write
+
+Then run ESLint again to confirm there are no linting issues.
+
+---
+
 # Future Improvements
 
 If additional environment access and time were available, the following improvements could be made:
