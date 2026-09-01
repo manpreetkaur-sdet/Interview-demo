@@ -10,7 +10,6 @@ export class RegistrationPage {
   readonly passwordInput: Locator;
   readonly acceptCheckbox: Locator;
   readonly createAccountButton: Locator;
-  readonly confirmEmailMessage: Locator;
   readonly emailError: Locator;
   readonly passwordError: Locator;
 
@@ -22,16 +21,10 @@ export class RegistrationPage {
     this.companyAndLegalForm = page.getByTestId('company_name-input');
     this.emailInput = page.getByTestId('email-input');
     this.passwordInput = page.getByTestId('password-input');
-    this.acceptCheckbox = page.getByTestId(
-      'terms-and-condition-checkbox',
-    );
+    this.acceptCheckbox = page.getByTestId('terms-and-condition-checkbox');
     this.createAccountButton = page.getByTestId('create-account-button');
-   this.confirmEmailMessage = page.getByRole('heading', {
-  name: /Please confirm your email address|Bitte bestätige deine E-Mail Adresse/i,
-});
-
-this.emailError = page.getByTestId('email-error');
-this.passwordError = page.getByTestId('password-error');
+    this.emailError = page.getByTestId('email-error');
+    this.passwordError = page.getByTestId('password-error');
   }
 
   async enterFirstName(firstName: string) {
@@ -60,7 +53,5 @@ this.passwordError = page.getByTestId('password-error');
 
   async createAccount() {
     await this.createAccountButton.click();
-    
   }
-  
 }

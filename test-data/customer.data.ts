@@ -29,12 +29,7 @@ export const invalidEmails = [
   'test@@example.com',
 ];
 
-export const invalidPasswords = [
-  'Ab1!',
-  '12345678!',
-  'Password!',
-  'Password123',
-];
+export const invalidPasswords = ['Ab1!', '12345678!', 'Password!', 'Password123'];
 export const emailValidationError =
   /The email must be a valid email address|email muss eine gültige E-Mail-Adresse sein\./i;
 export const passwordValidationError =

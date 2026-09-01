@@ -8,10 +8,10 @@ export default defineConfig({
   expect: {
     timeout: 15 * 1000,
   },
-  workers:4,
+  workers: 4,
   reporter: 'html',
   use: {
-  baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL,
 
     httpCredentials: {
       username: process.env.BASIC_AUTH_USERNAME!,

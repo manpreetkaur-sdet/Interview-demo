@@ -1,38 +1,33 @@
-module.exports = {
-  root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  env: {
-    node: true,
-    es2022: true,
-  },
-  ignorePatterns: ['report/**', 'node_modules/**'],
-  overrides: [
-    {
-      files: ['tests/**/*.ts'],
-      rules: {
-        'no-restricted-imports': [
-          'error',
-          {
-            paths: [
-              {
-                name: '@playwright/test',
-                message:
-                  'Import test/expect from setup/auth.fixtures to enforce framework fixtures.',
-              },
-            ],
-          },
-        ],
-        'no-restricted-syntax': [
-          'error',
-          {
-            selector:
-              "CallExpression[callee.property.name='locator'], CallExpression[callee.property.name='getByRole'], CallExpression[callee.property.name='getByText'], CallExpression[callee.property.name='getByTestId']",
-            message: 'Direct locator usage in specs is disallowed. Use page object methods.',
-          },
-        ],
-      },
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
     },
-  ],
-};
+  },
+
+  {
+    ignores: [
+      'node_modules/',
+      'playwright-report/',
+      'test-results/',
+      'coverage/',
+      'dist/',
+      '.git/',
+    ],
+  },
+);

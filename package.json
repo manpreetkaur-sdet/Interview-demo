@@ -2,7 +2,11 @@
   "name": "interview-demo",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+ "scripts": {
+  "test": "playwright test",
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
