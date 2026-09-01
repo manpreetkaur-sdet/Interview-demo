@@ -118,7 +118,7 @@ test.describe('Customer Registration', () => {
       });
     }
 
-    test('Should allow registration after correcting invalid email', async ({ loginPage }) => {
+    test('Registration form should allow registration after correcting invalid email', async ({ loginPage }) => {
       const registrationPage = await loginPage.openCustomerRegistration();
 
       const customer = createCustomerData();
@@ -148,7 +148,7 @@ test.describe('Customer Registration', () => {
 
   test.describe('Password Validation', () => {
     for (const password of invalidPasswords) {
-      test(`Should show validation error for invalid password: ${password}`, async ({
+      test(`Registration form should show validation error for invalid password: ${password}`, async ({
         loginPage,
       }) => {
         const registrationPage = await loginPage.openCustomerRegistration();
