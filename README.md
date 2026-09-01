@@ -1,4 +1,4 @@
-# Playwright Test Automation
+# Rapiduser test Automation
 
 ## Project Description
 
