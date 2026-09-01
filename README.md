@@ -29,7 +29,7 @@ Email verification through the confirmation link is also not automated because i
 
 ---
 
-# Installation
+## Installation
 
 Install project dependencies:
 
@@ -47,7 +47,7 @@ npx playwright install
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 .
@@ -158,7 +158,7 @@ Contains the main Playwright configuration, including:
 
 ---
 
-# Test Architecture
+## Test Architecture
 
 The framework follows the **Page Object Model (POM)** approach.
 
@@ -178,7 +178,7 @@ This separation improves readability, reusability, and maintainability.
 
 ---
 
-# Test Data
+## Test Data
 
 Test data is maintained in the `test-data` folder.
 
@@ -194,7 +194,7 @@ The application supports English and German, so the validation assertions suppor
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 The test suite is configured to support parallel execution.
 
@@ -204,7 +204,7 @@ This reduces the overall execution time of the regression suite.
 
 Tests are designed to be independent and should not rely on the execution order of other tests.
 
-## Run tests in parallel
+### Run tests in parallel
 
 Run the complete suite using multiple workers:
 
@@ -222,7 +222,7 @@ The number of workers can be adjusted depending on the environment.
 
 ---
 
-# Run Tests Without Parallel Execution
+## Run Tests Without Parallel Execution
 
 For sequential execution, use a single worker:
 
@@ -245,7 +245,7 @@ Sequential execution is useful when:
 
 ---
 
-# Running Tests in Headless Mode
+## Running Tests in Headless Mode
 
 Playwright runs tests in headless mode by default.
 
@@ -507,6 +507,9 @@ If additional environment access and time were available, the following improvem
 * Expand cross-browser regression execution
 * Add additional edge-case validation scenarios
 * Improve reusable test helpers as the automation suite grows
+* Will user playwrigh cli if required
+* Will user custom AI Agent if required to use copilot
+* Will use AI Agents to create manual and automation test cases
 
 ---
 
