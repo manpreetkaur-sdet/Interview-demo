@@ -32,7 +32,7 @@ test.describe('Customer Registration', () => {
 
     await registrationPage.createAccount();
 
-      await expect(registrationPage.emailError).toHaveText(emailValidationError);
+    await expect(registrationPage.confirmEmailMessage).toBeVisible();
   });
 
   // =========================================================
