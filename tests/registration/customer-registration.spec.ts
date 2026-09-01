@@ -98,7 +98,7 @@ test.describe('Customer Registration', () => {
 
   test.describe('Email Validation', () => {
     for (const email of invalidEmails) {
-      test(`Should show validation error for invalid email: ${email}`, async ({ loginPage }) => {
+      test(`Registration form should show validation error for invalid email: ${email}`, async ({ loginPage }) => {
         const registrationPage = await loginPage.openCustomerRegistration();
 
         const customer = createCustomerData();
